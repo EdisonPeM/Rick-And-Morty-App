@@ -12,7 +12,7 @@ const config = {
     publicPath: '/',
   },
   resolve: {
-    extensions: ['.js', '.jsx', '.ts', '.tsx'],
+    extensions: ['.js', '.jsx'],
   },
   module: {
     rules: [
@@ -23,17 +23,6 @@ const config = {
           presets: ['@babel/preset-env', '@babel/preset-react'],
         },
         exclude: '/node_modules/',
-      },
-      {
-        test: /\.tsx?$/,
-        use: {
-          loader: 'ts-loader',
-        },
-        exclude: '/node_modules/',
-      },
-      {
-        test: /\.css$/,
-        use: [MiniCssExtractPlugin.loader, 'css-loader'],
       },
       {
         test: /\.s[ac]ss$/,
