@@ -1,6 +1,9 @@
 # Build folder
 build/
 
+# vs code workspace settings
+.vscode
+
 # Logs
 logs
 *.log

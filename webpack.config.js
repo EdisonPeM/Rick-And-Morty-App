@@ -2,8 +2,8 @@ const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const CopyPlugin = require('copy-webpack-plugin');
-
 const path = require('path');
+
 const config = {
   output: {
     filename: 'js/[name].[contenthash].bundle.js',
@@ -13,6 +13,11 @@ const config = {
   },
   resolve: {
     extensions: ['.js', '.jsx'],
+    alias: {
+      Components: path.resolve(__dirname, 'src', 'Components'),
+      Containers: path.resolve(__dirname, 'src', 'Containers'),
+      Utils: path.resolve(__dirname, 'src', 'Utils'),
+    },
   },
   module: {
     rules: [
@@ -23,6 +28,10 @@ const config = {
           presets: ['@babel/preset-env', '@babel/preset-react'],
         },
         exclude: '/node_modules/',
+      },
+      {
+        test: /\.css$/,
+        use: [MiniCssExtractPlugin.loader, 'css-loader'],
       },
       {
         test: /\.s[ac]ss$/,

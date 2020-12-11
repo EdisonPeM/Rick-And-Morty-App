@@ -1,10 +1,20 @@
 import React from 'react';
-import Title from './components/Header';
 
+// import Title from 'Components/Header';
+import Navbar from 'Components/Shared/Navbar';
+import Characters from 'Containers/Characters';
+
+import 'bootswatch/dist/minty/bootstrap.min.css';
 import './App.scss';
 
 function App() {
-  return <Title title="Hola Mundo" />;
+  return (
+    // Fragment <> </>
+    <>
+      <Navbar />
+      <Characters />
+    </>
+  );
 }
 
 export default App;

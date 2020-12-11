@@ -12,8 +12,12 @@
   "author": "Edison Peñuela <edisonpe961206@hotmail.com>",
   "license": "MIT",
   "dependencies": {
+    "bootswatch": "^4.5.3",
     "react": "^17.0.1",
+    "react-bootstrap": "^1.4.0",
     "react-dom": "^17.0.1",
+    "react-icons": "^4.1.0",
+    "react-router-dom": "^5.2.0",
     "serve": "^11.3.2"
   },
   "devDependencies": {
