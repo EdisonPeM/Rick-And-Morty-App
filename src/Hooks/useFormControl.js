@@ -13,7 +13,7 @@ function useFormControl(initialInputsValue) {
 
   const handleSubmit = fn => e => {
     e.preventDefault();
-    fn();
+    fn(state);
   };
 
   return [state, handleChange, handleSubmit];
