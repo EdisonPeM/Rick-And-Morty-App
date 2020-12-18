@@ -5,13 +5,10 @@ import styles from './CharactersList.module.scss';
 
 function CharactersList({ items }) {
   return (
-    <div className="container">
-      <h3>Lista de Personajes</h3>
-      <div className={styles.grid}>
-        {items.map(item => (
-          <CharacterCard key={item.id} {...item} />
-        ))}
-      </div>
+    <div className={`${styles.grid} py-3`}>
+      {items.map(item => (
+        <CharacterCard key={item.id} {...item} />
+      ))}
     </div>
   );
 }
