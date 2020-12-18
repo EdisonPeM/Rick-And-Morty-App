@@ -33,6 +33,7 @@ function Characters() {
         onChange={handlePage}
       />
       <CharactersFilters
+        readOnly={loading}
         inputs={filters}
         onChange={handleChange}
         onSubmit={handleSubmit(reFetch)}
