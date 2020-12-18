@@ -7,15 +7,53 @@ class Characters extends Component {
   constructor() {
     this.state = {
       data: null,
+      error: null,
+      loading: true,
       page: 1,
     }
     
     this.handlePage = this.handlePage.bind(this);
   }
 
-  componentWillMount() {
-    // Fetch to Get DATA
-    fn().then(data => this.setState({ data }))
+  getData(){
+    getCharacters(this.state.page)
+      .then(resData => {
+        this.setState({
+          error: null,
+          data: resData,
+          loading: false.
+        })
+      })
+      .catch(resError => {
+        this.setState({
+          error: resError,
+          data: null,
+          loading: false.
+        })
+      });
+  }
+
+  componentDidMount() {
+    this.getData()
+  }
+
+  componentDidUpdate(prevProps, prevState){
+    if(prevState.page !== this.state.page) {
+      // mi página cambió
+      this.getData();
+    }
+
+    if(condicion2){
+      funcion2
+    }
+
+    if(condicion3){
+      funcion3
+    }
+
+    if(condicion4){
+      funcion4
+    }
   }
 
   render() {
@@ -40,6 +78,30 @@ function Characters() {
   // Variable para controlar la paginacion
   const [page, setPage] = useState(1);
 
+  /**
+  function getData(){
+    // fetch Data
+  }
+
+  // React internamente comparaá si mis variables
+  // de dependencias cambiaron, si lo hacen, entonces
+  // Llamará a la función de nuevo
+  useEffect(getData, [page])
+
+  useEffect(function(){
+    // Fetch data
+  }, [page])
+
+  useEffect(() => {
+    // Fetch data
+  }, [page])
+
+  useEffect(() => {
+    // Fetch data
+    // Simula el llamado de esta función en el componentDidMount
+  }, [])
+
+   */
   // filosofía: Realizar operaciones para SINCRONIZAR el estado
   useEffect(() => {
     // get Data and set DAta to "data" state
