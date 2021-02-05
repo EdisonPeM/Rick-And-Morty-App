@@ -14,6 +14,7 @@ const config = {
   resolve: {
     extensions: ['.js', '.jsx'],
     alias: {
+      Assets: path.resolve(__dirname, 'src', 'Assets'),
       Components: path.resolve(__dirname, 'src', 'Components'),
       Containers: path.resolve(__dirname, 'src', 'Containers'),
       Hooks: path.resolve(__dirname, 'src', 'Hooks'),
