@@ -1,13 +1,15 @@
 import React from 'react';
 
-import { Button, Form, FormControl } from 'react-bootstrap';
+import Button from 'react-bootstrap/Button';
+import Form from 'react-bootstrap/Form';
+import FormControl from 'react-bootstrap/FormControl';
 
 function CharacterFilters({ inputs, onChange, onSubmit, readOnly = false }) {
   return (
-    <Form inline onSubmit={onSubmit}>
+    <Form inline className="justify-content-center" onSubmit={onSubmit}>
       <FormControl
         readOnly={readOnly}
-        className="mr-sm-2"
+        className="mb-1 mr-sm-2"
         name="name"
         placeholder="name"
         value={inputs.name}
@@ -16,7 +18,7 @@ function CharacterFilters({ inputs, onChange, onSubmit, readOnly = false }) {
 
       <FormControl
         readOnly={readOnly}
-        className="mr-sm-2"
+        className="mb-1 mr-sm-2"
         as="select"
         name="status"
         value={inputs.status}
@@ -30,7 +32,7 @@ function CharacterFilters({ inputs, onChange, onSubmit, readOnly = false }) {
 
       <FormControl
         readOnly={readOnly}
-        className="mr-sm-2"
+        className="mb-1 mr-sm-2"
         name="species"
         placeholder="species"
         value={inputs.species}
@@ -39,7 +41,7 @@ function CharacterFilters({ inputs, onChange, onSubmit, readOnly = false }) {
 
       <FormControl
         readOnly={readOnly}
-        className="mr-sm-2"
+        className="mb-1 mr-sm-2"
         as="select"
         name="gender"
         value={inputs.gender}
