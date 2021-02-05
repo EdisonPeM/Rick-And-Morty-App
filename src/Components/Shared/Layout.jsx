@@ -7,7 +7,9 @@ function Layout({ children }) {
     <>
       <NavbarApp />
       <main>{children}</main>
-      <footer>Copyright © 2020</footer>
+      <footer className="text-center p-3 bg-secondary text-white">
+        Copyright © 2021
+      </footer>
     </>
   );
 }

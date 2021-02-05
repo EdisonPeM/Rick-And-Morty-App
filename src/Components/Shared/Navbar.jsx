@@ -7,7 +7,7 @@ import Nav from 'react-bootstrap/Nav';
 
 function NavbarApp() {
   return (
-    <Navbar bg="secondary" variant="dark" expand="lg">
+    <Navbar bg="secondary" variant="dark" expand="md">
       <Navbar.Brand as={NavLink} to="/">
         Rick &amp; Morty App
       </Navbar.Brand>
