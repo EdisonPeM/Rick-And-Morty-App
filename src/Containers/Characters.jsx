@@ -10,6 +10,7 @@ import useFormControl from 'Hooks/useFormControl';
 import useFetch from 'Hooks/useFetch';
 
 import { getCharacters } from 'Utils/Requester';
+import Loading from 'Components/Shared/Loading';
 
 function Characters() {
   // Esta es la sección de la variable de estado Page y sus funciones
@@ -44,7 +45,7 @@ function Characters() {
         onChangePage={setPage}
       />
       {loading ? (
-        <p>loading...</p>
+        <Loading />
       ) : error ? (
         <p>Ha ocurrido un error ({error.message})</p>
       ) : (
