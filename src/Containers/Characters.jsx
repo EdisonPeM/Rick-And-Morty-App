@@ -1,6 +1,6 @@
 import React from 'react';
 
-import CharactersList from 'Components/Characters/CharacterList';
+import ListGrid from 'Components/Shared/ListGrid';
 import CharactersFilters from 'Components/Characters/CharacterFilters';
 
 import useInputControl from 'Hooks/useInputControl';
@@ -43,7 +43,11 @@ function Characters() {
       ) : error ? (
         <p>Ha ocurrido un error ({error.message})</p>
       ) : (
-        <CharactersList items={data.results} />
+        <ListGrid>
+          {data.results.map(item => (
+            <CharacterCard key={item.id} {...item} />
+          ))}
+        </ListGrid>
       )}
     </>
   );
