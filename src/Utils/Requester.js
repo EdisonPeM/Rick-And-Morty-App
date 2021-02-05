@@ -21,6 +21,10 @@ export function getCharacters({
   return RickApi.get(`character?${URL_PARAMS}`);
 }
 
+export function getCharacterById({ id = 0 }) {
+  return RickApi.get(`character/${id}`);
+}
+
 export function getLocations(params) {
   const URL_PARAMS = new URLSearchParams(params);
   return RickApi.get(`locations?${URL_PARAMS}`);
