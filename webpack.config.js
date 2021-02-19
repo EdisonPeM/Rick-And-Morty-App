@@ -2,8 +2,8 @@ const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const CopyPlugin = require('copy-webpack-plugin');
-
 const path = require('path');
+
 const config = {
   output: {
     filename: 'js/[name].[contenthash].bundle.js',
@@ -12,7 +12,15 @@ const config = {
     publicPath: '/',
   },
   resolve: {
-    extensions: ['.js', '.jsx', '.ts', '.tsx'],
+    extensions: ['.js', '.jsx'],
+    alias: {
+      Assets: path.resolve(__dirname, 'src', 'Assets'),
+      Components: path.resolve(__dirname, 'src', 'Components'),
+      Containers: path.resolve(__dirname, 'src', 'Containers'),
+      Hooks: path.resolve(__dirname, 'src', 'Hooks'),
+      Pages: path.resolve(__dirname, 'src', 'Pages'),
+      Utils: path.resolve(__dirname, 'src', 'Utils'),
+    },
   },
   module: {
     rules: [
@@ -21,13 +29,6 @@ const config = {
         loader: 'babel-loader',
         options: {
           presets: ['@babel/preset-env', '@babel/preset-react'],
-        },
-        exclude: '/node_modules/',
-      },
-      {
-        test: /\.tsx?$/,
-        use: {
-          loader: 'ts-loader',
         },
         exclude: '/node_modules/',
       },
