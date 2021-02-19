@@ -4,7 +4,7 @@ import usePageTitle from 'Hooks/usePageTitle';
 function Home() {
   usePageTitle();
 
-  return <div>Este el home</div>;
+  return <div className="Jumbotron text-center">Este el home</div>;
 }
 
 export default Home;
